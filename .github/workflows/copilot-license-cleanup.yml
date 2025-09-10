@@ -12,6 +12,7 @@ jobs:
       - uses: austenstone/copilot-license-cleanup@v1.5
         with:
           github-token: ${{ secrets.PAT }}
+          csv: true
           remove: true
           remove-from-team: true
           inactive-days: 30
