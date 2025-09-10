@@ -15,3 +15,14 @@ jobs:
           time-zone: 'JST'
           days: 7
           csv: true
+      - name: Notify teams channel
+        uses: jdcargile/ms-teams-notification@v1.4
+        with:
+          github-token: ${{ github.token }}
+          ms-teams-webhook-uri: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
+          notification-summary: |
+            Copilot Usage Report を生成しました。
+            詳細はこちら: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          notification-color: 007bff
+          timezone: Asia/Tokyo
+          verbose-logging: true
