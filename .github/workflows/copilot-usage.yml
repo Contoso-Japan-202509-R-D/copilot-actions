@@ -13,6 +13,5 @@ jobs:
         with:
           github-token: ${{ secrets.PAT }}
           time-zone: 'JST'
-      - uses: austenstone/job-summary@v2.0
-        with:
-          name: copilot-usage
+          days: 7
+          csv: true
