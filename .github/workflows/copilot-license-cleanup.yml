@@ -1,0 +1,19 @@
+name: Cleanup Copilot Licenses
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  copilot:
+    name: Copilot Seats
+    runs-on: ubuntu-latest
+    steps:
+      - uses: austenstone/copilot-license-cleanup@v1.5
+        with:
+          github-token: ${{ secrets.PAT }}
+          remove: true
+          remove-from-team: true
+          inactive-days: 30
+          enterprise: contoso-japan-202509
+          # organization: Contoso-Japan-202509-R-D, Contoso-Japan-202509-HR
